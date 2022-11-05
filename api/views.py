@@ -1,3 +1,7 @@
+from django.http import JsonResponse
 from django.shortcuts import render
 
-# Create your views here.
+
+
+def api_index(request):
+    return JsonResponse({"data": "Working perfectly fine"})

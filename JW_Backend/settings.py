@@ -12,15 +12,21 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 
 from pathlib import Path
 
+import json
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
+
+
+with open(BASE_DIR / 'env.json', 'r') as env_file:
+    env = json.loads(env_file.read())
 
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-+ho_@61%_7undt2yv+kx=cq@0&9yl&f%phj#)a&5_t&@v#%mi0'
+SECRET_KEY = env.get('APP_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -81,12 +87,24 @@ WSGI_APPLICATION = 'JW_Backend.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': env.get('DB_NAME'),
+        'USER': env.get('DB_USER'),
+        'PASSWORD': env.get('DB_PASSWORD'),
+        'HOST': env.get('DB_HOST'),
+        'PORT': env.get('DB_PORT'),
     }
 }
+
 
 
 # Password validation

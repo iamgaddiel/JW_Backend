@@ -11,6 +11,7 @@ pillow = "*"
 django-cors-headers = "*"
 djangorestframework-simplejwt = "*"
 drf-yasg = "*"
+mysqlclient = "*"
 
 [dev-packages]
 
