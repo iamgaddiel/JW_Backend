@@ -48,8 +48,10 @@ INSTALLED_APPS = [
     'rest_framework',
     'rest_framework_simplejwt',
     'corsheaders',
-    'django.contrib.staticfiles',  # required for serving swagger ui's css/js files
     'drf_yasg',
+
+    # Apps
+    'api',
 ]
 
 MIDDLEWARE = [
@@ -147,6 +149,10 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+# AUTH USER MODEL
+AUTH_USER_MODEL = 'api.User'
 
 
 # SIMPLE JWT CONFIGS
