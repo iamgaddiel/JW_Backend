@@ -12,6 +12,8 @@ django-cors-headers = "*"
 djangorestframework-simplejwt = "*"
 drf-yasg = "*"
 mysqlclient = "*"
+dj-rest-auth = {extras = ["with_social"], version = "*"}
+pyopenssl = "*"
 
 [dev-packages]
 

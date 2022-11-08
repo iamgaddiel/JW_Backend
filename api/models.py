@@ -11,6 +11,7 @@ class User(AbstractUser):
     street = models.CharField(max_length=400)
     country = models.CharField(max_length=400)
     email = models.EmailField(unique=True)
+    email_is_verified = models.BooleanField(default=False)
     delivery_address = models.CharField(max_length=400)
     delivery_address_two = models.CharField(max_length=400)
     delivery_address_two = models.CharField(max_length=400)

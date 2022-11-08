@@ -25,18 +25,32 @@ schema_view = get_schema_view(
 )
 
 urlpatterns = [
+
+   # ------------------------------------------------------
+   # ------------------ Custom ----------------------------
+   # ------------------------------------------------------
     path('admin/', admin.site.urls),
-    #  APP API
     path('api/',  include('api.urls')),
 
-    # JWT
-    path('api/token/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
+   # ------------------------------------------------------
+   # ------------------ Custom ----------------------------
+   # ------------------------------------------------------
+    path('api/auth/', include('dj_rest_auth.urls')),
+
+   # ------------------------------------------------------
+   # ------------------ JWT ------------------------------
+   # ------------------------------------------------------
+    path('api/login/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
     path('api/token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
+
+
+   # ------------------------------------------------------
+   # ------------------ SWAGGER ---------------------------
+   # ------------------------------------------------------
 
     # SWAGGER UI
    re_path(r'^swagger(?P<format>\.json|\.yaml)$', schema_view.without_ui(cache_timeout=0), name='schema-json'),
    re_path(r'^swagger/$', schema_view.with_ui('swagger', cache_timeout=0), name='schema-swagger-ui'),
    re_path(r'^redoc/$', schema_view.with_ui('redoc', cache_timeout=0), name='schema-redoc'),
-
 
 ]
