@@ -1,0 +1,50 @@
+{% extends 'core/template.html' %} {% load static %} {% block title %} Home {% endblock title %}
+{% block content %}
+<!--************ Header Starts ************* -->
+<header class="">
+    <section class="container">
+        <div class="row justify-content-between align-items-center">
+            <div class="col-sm-12 col-md-7">
+                <h1>Ultimate Sport Apparel and Fan Gear Store</h1>
+                <p class="my-4">Buy authentic jersey ranging from football, basketball, Volleyball, <br>  Hocky to other sport</p>
+                <!-- TODO: Add link here -->
+                <a href="" class="banner-action-button text-dark mt-3 rounded">
+                    Shop for jersey <i class="fa fa-angle-right"></i>
+                </a>
+            </div>
+            <div class="col-sm-12 col-md-4 justify-self-center ms-auto m-0">
+                <div class="banner-image ml-auto">
+                    <img src="{% static 'images/banner-img.png' %}" alt="banner jersey">
+                </div>
+            </div>
+        </div>
+    </section>
+</header>
+<!--************ Header Ends ************* -->
+
+
+<main class="container">
+
+    <!--************ New Arrivals Starts ************* -->
+    <section class="new-arrivals text-center">
+        <h1>New Arrivals</h1>
+        <p>Get this seasons jersey at a cheaper rate & and receive a premium package</p>
+    
+        <!-- CArds -->
+        <div class="row justify-content-center align-items-center">
+            <div class="col-sm-12 col-md-3">
+
+            </div>
+            <div class="col-sm-12 col-md-3"></div>
+            <div class="col-sm-12 col-md-3"></div>
+            <div class="col-sm-12 col-md-3"></div>
+        </div>
+    </section>
+    <!--************ New Arrivals Ends ************* -->
+</main>
+{% endblock content %}
+
+
+
+<!--************ Header Starts ************* -->
+<!--************ Header Ends ************* -->

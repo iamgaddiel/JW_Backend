@@ -1,0 +1,129 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;500&display=swap');
+
+* {
+    --red: #F31414;
+    --red-o-1: #FDE9EA;
+    --blue: #041E48;
+    --green: #041E48;
+    --light: #ffffff;
+    --green: #4CB951;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', 'Montserrat', sans-serif !important;
+}
+
+a{
+    text-decoration: none !important;
+}
+
+
+/* -------------------------------------------------------- */
+/* ------------------------- [ Navigation ] --------------- */
+/* -------------------------------------------------------- */
+nav {
+    background-color: var(--light);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 30px;
+}
+
+.nav-logo {
+    width: 150px;
+
+}
+
+.nav-logo img {
+    width: 100%;
+    height: auto;
+}
+
+.nav-items {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 19rem;
+    text-align: center;
+    font-weight: light;
+    margin: 0;
+}
+
+.nav-item {
+    position: relative;
+}
+
+.nav-item-text {
+    display: block;
+    display: block;
+}
+
+.nav-item .nav-badge {
+    position: absolute;
+    top: -5px;
+    right: -9px;
+    background-color: var(--blue);
+    width: 20px;
+    height: 20px;
+    overflow: hidden;
+    padding: 5px;
+    border-radius: 50%;
+    color: var(--light);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav-item-img-wrapper {
+    width: 33px;
+    height: 33px;
+    align-self: flex-start;
+}
+
+.nav-item-img-wrapper img {
+    width: 100%;
+    height: auto;
+}
+.nav-flag{
+    width: 25px;
+    display: inline-block;
+}
+
+.nav-flag img{
+    width: 100%;
+    height: auto;
+}
+
+
+
+
+/* -------------------------------------------------------- */
+/* ------------------------- [ Banner ] --------------- */
+/* -------------------------------------------------------- */
+
+header{
+    background-color: var(--red);
+    height: 90vh;
+    color: var(--light);
+    margin-top: 90px;
+    overflow-x: hidden !important;
+}
+
+header h1{
+    font-size: 4em;
+}
+
+header p{
+    font-size: large;
+}
+
+.banner-action-button{
+    border: none;
+    padding: 20px;
+    width: 190px;
+    background-color: var(--light);
+}
