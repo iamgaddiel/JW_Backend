@@ -5,7 +5,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>JerseyWorld | {% block title %}{% endblock title %}</title>
+    <title>JerseyWorld | {% block title %} Home {% endblock title %}</title>
 
     <!-- Styles  -->
     <link rel="stylesheet" href="{% static 'css/global.css' %}" />
@@ -21,6 +21,10 @@
       rel="stylesheet"
       href="{% static 'vendors/slick/slick/slick.css' %}"
     />
+    <link
+      rel="stylesheet"
+      href="{% static 'vendors/slick/slick/slick-theme.css' %}"
+    />
     {% block styles %}{% endblock styles %}
   </head>
   <body>
@@ -33,9 +37,11 @@
     {% block content %}{% endblock content %}
 
     <!-- Scripts -->
-    <script src="{% static 'js/global.js' %}"></script>
+    <script src="{% static 'js/jquery.js' %}"></script>
+    <script src="{% static 'js/jquery_migrate.js' %}"></script>
     <script src="{% static 'vendors/bootstrap/js/bootstrap.min.js' %}"></script>
     <script src="{% static 'vendors/slick/slick/slick.min.js' %}"></script>
+    <script src="{% static 'js/global.js' %}"></script>
     {% block scripts %}{% endblock scripts %}
   </body>
 </html>

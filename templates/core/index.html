@@ -1,50 +1,607 @@
-{% extends 'core/template.html' %} {% load static %} {% block title %} Home {% endblock title %}
-{% block content %}
+{% extends 'core/template.html' %} {% load static %} {% block content %}
 <!--************ Header Starts ************* -->
 <header class="">
-    <section class="container">
-        <div class="row justify-content-between align-items-center">
-            <div class="col-sm-12 col-md-7">
-                <h1>Ultimate Sport Apparel and Fan Gear Store</h1>
-                <p class="my-4">Buy authentic jersey ranging from football, basketball, Volleyball, <br>  Hocky to other sport</p>
-                <!-- TODO: Add link here -->
-                <a href="" class="banner-action-button text-dark mt-3 rounded">
-                    Shop for jersey <i class="fa fa-angle-right"></i>
-                </a>
-            </div>
-            <div class="col-sm-12 col-md-4 justify-self-center ms-auto m-0">
-                <div class="banner-image ml-auto">
-                    <img src="{% static 'images/banner-img.png' %}" alt="banner jersey">
-                </div>
-            </div>
+  <section class="container">
+    <div class="row justify-content-between align-items-center">
+      <div class="col-sm-12 col-md-7">
+        <h1 class="text-sm-center text-md-start">
+          Ultimate Sport Apparel and Fan Gear Store
+        </h1>
+        <p class="my-4 text-sm-center text-md-start">
+          Buy authentic jersey ranging from football, basketball, Volleyball,
+          <br />
+          Hocky to other sport
+        </p>
+        <!-- TODO: Add link here -->
+        <a href="" class="banner-action-button text-dark mt-5 rounded">
+          Shop for jersey <i class="fa fa-angle-right"></i>
+        </a>
+      </div>
+      <div class="col-sm-12 col-md-4 justify-self-center ms-auto m-0">
+        <div class="banner-image ml-auto">
+          <img src="{% static 'images/banner-img.png' %}" alt="banner jersey" />
         </div>
-    </section>
+      </div>
+    </div>
+  </section>
 </header>
 <!--************ Header Ends ************* -->
 
+<main class="">
+  <!--************ New Arrivals Starts ************* -->
+  <section class="new-arrivals py-5 my-5 container">
+    <div class="text-center section-title w-50 mx-auto">
+      <h1>New Arrivals</h1>
+      <p class="text-muted mt-3 text-wrap">
+        Get this seasons jersey at a cheaper rate & and receive a premium
+        package
+      </p>
+    </div>
 
-<main class="container">
-
-    <!--************ New Arrivals Starts ************* -->
-    <section class="new-arrivals text-center">
-        <h1>New Arrivals</h1>
-        <p>Get this seasons jersey at a cheaper rate & and receive a premium package</p>
-    
-        <!-- CArds -->
-        <div class="row justify-content-center align-items-center">
-            <div class="col-sm-12 col-md-3">
-
-            </div>
-            <div class="col-sm-12 col-md-3"></div>
-            <div class="col-sm-12 col-md-3"></div>
-            <div class="col-sm-12 col-md-3"></div>
+    <!-- CArds -->
+    <div class="row justify-content-center align-items-center mt-5">
+      <div class="col-sm-6 col-md-3">
+        <div class="c-card p-2 rounded border">
+          <!-- TODO: toggle icon color -->
+          <!-- TODO: float-start hot-badge -->
+          <a href="" class="float-end">
+            <i class="far fa-heart fa-2x text-dark"></i>
+          </a>
+          <div class="c-img">
+            <img src="{% static 'images/img-4.png' %}" alt="" class="w-100" />
+          </div>
+          <div class="c-card-text mt-4">
+            <p class="text-wrap">
+              Lorem ipsum dolor sit amet consectetur, elit
+            </p>
+            <!-- TODO: if price slash show previous price commented -->
+            <span class="fw-bold">NGN 3,000 </span>
+            <span class="fw-light text-muted text-decoration-line-through"
+              >NGN 3,000</span
+            >
+          </div>
         </div>
-    </section>
-    <!--************ New Arrivals Ends ************* -->
+      </div>
+    </div>
+
+    <!--************ VIEW MOrE  ************* -->
+    <div class="mt-5 text-center">
+      <a href="" class="btn btn-outline-danger px-5 py-2 shadow">
+        View More
+        <i class="fa fa-angle-right"></i>
+      </a>
+    </div>
+    <!--************ VIEW MOrE  ************* -->
+  </section>
+  <!--************ New Arrivals Ends ************* -->
+
+  <!--************ Special Offer Starts ************* -->
+  <section class="special-offer my-5 container">
+    <div class="row py-3 justify-content-center align-items-center">
+      <div class="col-sm-12 col-md-3">
+        <div class="c-card p-2 rounded border">
+          <!-- TODO: toggle icon color -->
+          <!-- TODO: float-start hot-badge -->
+          <a href="" class="badge c-badge text-uppercase">-10% off</a>
+          <div class="c-img mt-3 text-center">
+            <img src="{% static 'images/img-4.png' %}" alt="" class="w-75" />
+          </div>
+
+          <!-- progress bar -->
+          <div class="c-progress mt-3">
+            <span class="text-dark-1">2 pice left</span>
+            <input
+              type="range"
+              class="progress bg-warning"
+              min="0"
+              max="10"
+              value="5"
+              disabled
+            />
+          </div>
+
+          <div class="d-flex justify-content-between mt-2">
+            <!-- TODO: if price slash show previous price commented -->
+            <small class="w-50">
+              <span class="fw-bold">NGN 3,000 </span> <br />
+              <span class="fw-light text-muted text-decoration-line-through"
+                >NGN 3,000</span
+              >
+            </small>
+
+            <a href="" class="special-offer-btn">Buy Now</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!--************ Special Offer Ends ************* -->
+
+  <!--************ Category Starts ************* -->
+  <section class="categories my-5 py-5 container">
+    <div class="text-center section-title w-50 mx-auto">
+      <h1>Shop By Categories</h1>
+      <p class="text-muted mt-3 text-wrap">
+        Easily locate the team jersey you want to buy by category
+      </p>
+    </div>
+
+    <div class="row mt-5 justify-content-center align-items-center container">
+      <div class="col-sm-12 col-md-4">
+        <div class="category-card">
+          <img src="{% static 'images/cat1.png' %}" alt="" />
+          <div
+            class="cg-card-content d-flex justify-content-between align-items-center text-capitalize"
+          >
+            <p class="card-title">football jersey</p>
+            <a href="" class="cg-btn fw-light">Shop Now</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-12 col-md-4">
+        <div class="category-card">
+          <img src="{% static 'images/cat2.png' %}" alt="" />
+          <div
+            class="cg-card-content d-flex justify-content-between align-items-center text-capitalize"
+          >
+            <p class="card-title">Basketball jersey</p>
+            <a href="" class="cg-btn fw-light">Shop Now</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-12 col-md-4 mt-4">
+        <div class="category-card">
+          <img src="{% static 'images/cat3.png' %}" alt="" />
+          <div
+            class="cg-card-content d-flex justify-content-between align-items-center text-capitalize"
+          >
+            <p class="card-title">baseball jersey</p>
+            <a href="" class="cg-btn fw-light">Shop Now</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-12 col-md-4 mt-4">
+        <div class="category-card">
+          <img src="{% static 'images/cat4.png' %}" alt="" />
+          <div
+            class="cg-card-content d-flex justify-content-between align-items-center text-capitalize"
+          >
+            <p class="card-title">kids jersey</p>
+            <a href="" class="cg-btn fw-light">Shop Now</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-12 col-md-4 mt-4">
+        <div class="category-card">
+          <img src="{% static 'images/cat5.png' %}" alt="" />
+          <div
+            class="cg-card-content d-flex justify-content-between align-items-center text-capitalize"
+          >
+            <p class="card-title">female jersey</p>
+            <a href="" class="cg-btn fw-light">Shop Now</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-12 col-md-4 mt-4">
+        <div class="category-card">
+          <img src="{% static 'images/cat6.png' %}" alt="" />
+          <div
+            class="cg-card-content d-flex justify-content-between align-items-center text-capitalize"
+          >
+            <p class="card-title">national team jersey</p>
+            <a href="" class="cg-btn fw-light">Shop Now</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!--************ Category Ends ************* -->
+
+  <!--************ Trending Football Starts ************* -->
+  <section class="new-arrivals py-5 my-5 container">
+    <div class="text-center section-title w-50 mx-auto">
+      <h1>Trending Football Jersey for fans</h1>
+      <p class="text-muted mt-3 text-wrap">
+        Football fan? showoff your team by getting your team jersey
+      </p>
+    </div>
+
+    <!-- CArds -->
+    <div class="mt-5 autoplay">
+      <div class="c-card trend-card p-2 border border-opacity-10 my-4 mx-3">
+        <!-- TODO: toggle icon color -->
+        <!-- TODO: float-start hot-badge -->
+        <a href="" class="float-end">
+          <i class="far fa-heart fa-2x text-dark"></i>
+        </a>
+        <div class="c-img">
+          <img src="{% static 'images/img-4.png' %}" alt="" class="w-100" />
+        </div>
+        <div class="c-card-text mt-4">
+          <p class="text-wrap">Lorem ipsum dolor sit amet consectetur, elit</p>
+          <!-- TODO: if price slash show previous price commented -->
+          <span class="fw-bold">NGN 3,000 </span>
+          <span class="fw-light text-muted text-decoration-line-through"
+            >NGN 3,000</span
+          >
+        </div>
+      </div>
+    </div>
+
+    <!--************ VIEW MOrE  ************* -->
+    <div class="mt-5 text-center">
+      <a href="" class="btn btn-outline-danger px-5 py-2 shadow">
+        View More
+        <i class="fa fa-angle-right"></i>
+      </a>
+    </div>
+    <!--************ VIEW MOrE  ************* -->
+  </section>
+  <!--************ Trending Football Ends ************* -->
+
+  <!--************ Trending Basketball Starts ************* -->
+  <section class="new-arrivals py-5 my-5 container">
+    <div class="text-center section-title w-50 mx-auto">
+      <h1>Trending Basketball Jersey for fans</h1>
+      <p class="text-muted mt-3 text-wrap">
+        Shop for you favorite jersey and buy now
+      </p>
+    </div>
+
+    <!-- CArds -->
+    <div class="mt-5 autoplay">
+      <div class="c-card trend-card p-2 border border-opacity-10 my-4 mx-3">
+        <!-- TODO: toggle icon color -->
+        <!-- TODO: float-start hot-badge -->
+        <a href="" class="float-end">
+          <i class="far fa-heart fa-2x text-dark"></i>
+        </a>
+        <div class="c-img">
+          <img
+            src="{% static 'images/PRODUCT IMAGE(1).png' %}"
+            alt=""
+            class="w-100"
+          />
+        </div>
+        <div class="c-card-text mt-4">
+          <p class="text-wrap">Lorem ipsum dolor sit amet consectetur, elit</p>
+          <!-- TODO: if price slash show previous price commented -->
+          <span class="fw-bold">NGN 3,000 </span>
+          <span class="fw-light text-muted text-decoration-line-through"
+            >NGN 3,000</span
+          >
+        </div>
+      </div>
+    </div>
+
+    <!--************ VIEW MOrE  ************* -->
+    <div class="mt-5 text-center">
+      <a href="" class="btn btn-outline-danger px-5 py-2 shadow">
+        View More
+        <i class="fa fa-angle-right"></i>
+      </a>
+    </div>
+    <!--************ VIEW MOrE  ************* -->
+  </section>
+  <!--************ Trending Basketball Ends ************* -->
+
+  <!--************ Ads Starts ************* -->
+  <section class="new-arrivals py-5 my-5 container">
+    <div class="row justify-content-center align-items-center">
+      <div class="col-sm-12 col-md-4 mt-3">
+        <a href="">
+          <div class="ad-card">
+            <img src="{% static 'images/ad1.png' %}" alt="" />
+          </div>
+        </a>
+      </div>
+      <div class="col-sm-12 col-md-4 mt-3">
+        <a href="">
+          <div class="ad-card">
+            <img src="{% static 'images/ad2.png' %}" alt="" />
+          </div>
+        </a>
+      </div>
+      <div class="col-sm-12 col-md-4 mt-3">
+        <a href="">
+          <div class="ad-card">
+            <img src="{% static 'images/ad3.png' %}" alt="" />
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+  <!--************ Ads Ends ************* -->
+
+  <!--************ Other Trends Starts ************* -->
+  <section class="new-arrivals py-5 my-5 container">
+    <div class="text-center section-title w-50 mx-auto">
+      <h1>Trending Other sport Jersey for fans</h1>
+      <p class="text-muted mt-3 text-wrap">
+        Football fan? showoff your team by getting your team jersey
+      </p>
+    </div>
+
+    <!-- CArds -->
+    <div class="mt-5 autoplay">
+      <div class="c-card trend-card p-2 border border-opacity-10 my-4 mx-3">
+        <!-- TODO: toggle icon color -->
+        <!-- TODO: float-start hot-badge -->
+        <a href="" class="float-end">
+          <i class="far fa-heart fa-2x text-dark"></i>
+        </a>
+        <div class="c-img">
+          <img src="{% static 'images/img-4.png' %}" alt="" class="w-100" />
+        </div>
+        <div class="c-card-text mt-4">
+          <p class="text-wrap">Lorem ipsum dolor sit amet consectetur, elit</p>
+          <!-- TODO: if price slash show previous price commented -->
+          <span class="fw-bold">NGN 3,000 </span>
+          <span class="fw-light text-muted text-decoration-line-through"
+            >NGN 3,000</span
+          >
+        </div>
+      </div>
+    </div>
+
+    <!--************ VIEW MOrE  ************* -->
+    <div class="mt-5 text-center">
+      <a href="" class="btn btn-outline-danger px-5 py-2 shadow">
+        View More
+        <i class="fa fa-angle-right"></i>
+      </a>
+    </div>
+    <!--************ VIEW MOrE  ************* -->
+  </section>
+  <!--************ Other Trends Ends ************* -->
+
+  <!--************ National Trend Starts ************* -->
+  <section class="new-arrivals py-5 my-5 container">
+    <div class="text-center section-title w-50 mx-auto">
+      <h1>Shop for National Jersey for fans</h1>
+      <p class="text-muted mt-3 text-wrap">
+        shop new jersey for your team, you need to own one
+      </p>
+    </div>
+
+    <!-- CArds -->
+    <div class="mt-5 autoplay">
+      <div class="c-card trend-card p-2 border border-opacity-10 my-4 mx-3">
+        <!-- TODO: toggle icon color -->
+        <!-- TODO: float-start hot-badge -->
+        <a href="" class="float-end">
+          <i class="far fa-heart fa-2x text-dark"></i>
+        </a>
+        <div class="c-img">
+          <img src="{% static 'images/img-4.png' %}" alt="" class="w-100" />
+        </div>
+        <div class="c-card-text mt-4">
+          <p class="text-wrap">Lorem ipsum dolor sit amet consectetur, elit</p>
+          <!-- TODO: if price slash show previous price commented -->
+          <span class="fw-bold">NGN 3,000 </span>
+          <span class="fw-light text-muted text-decoration-line-through"
+            >NGN 3,000</span
+          >
+        </div>
+      </div>
+    </div>
+
+    <!--************ VIEW MOrE  ************* -->
+    <div class="mt-5 text-center">
+      <a href="" class="btn btn-outline-danger px-5 py-2 shadow">
+        View More
+        <i class="fa fa-angle-right"></i>
+      </a>
+    </div>
+    <!--************ VIEW MOrE  ************* -->
+  </section>
+  <!--************ National Trend Ends ************* -->
+
+  <!--************ Looks Starts ************* -->
+  <section class="new-arrivals py-5 my-5 container">
+    <div class="text-center section-title w-50 mx-auto">
+      <p class="text-muted mt-3 text-wrap">follow us on IG @JerseyWorld.co</p>
+      <h1>Show us how you look#LiveYourLook ;-)</h1>
+    </div>
+
+    <div class="row mt-5 justify-content-center align-items-center">
+      <div class="col-sm-6 col-md-3 mt-4">
+        <div class="category-card">
+          <img src="{% static 'images/js1.png' %}" alt="" />
+        </div>
+      </div>
+      <div class="col-sm-6 col-md-3 mt-4">
+        <div class="category-card">
+          <img src="{% static 'images/js2.png' %}" alt="" />
+        </div>
+      </div>
+      <div class="col-sm-6 col-md-3 mt-4">
+        <div class="category-card">
+          <img src="{% static 'images/js3.png' %}" alt="" />
+        </div>
+      </div>
+      <div class="col-sm-6 col-md-3 mt-4">
+        <div class="category-card">
+          <img src="{% static 'images/js4.png' %}" alt="" />
+        </div>
+      </div>
+      <div class="col-sm-6 col-md-3 mt-4">
+        <div class="category-card">
+          <img src="{% static 'images/js5.png' %}" alt="" />
+        </div>
+      </div>
+      <div class="col-sm-6 col-md-3 mt-4">
+        <div class="category-card">
+          <img src="{% static 'images/js6.png' %}" alt="" />
+        </div>
+      </div>
+      <div class="col-sm-6 col-md-3 mt-4">
+        <div class="category-card">
+          <img src="{% static 'images/js7.png' %}" alt="" />
+        </div>
+      </div>
+      <div class="col-sm-6 col-md-3 mt-4">
+        <div class="category-card">
+          <img src="{% static 'images/js8.png' %}" alt="" />
+        </div>
+      </div>
+    </div>
+
+    <div class="text-center my-5">
+      <a href="" class="follow-btn shadow mt-5">Follow Us on Instagram</a>
+    </div>
+  </section>
+  <!--************ Looks Ends ************* -->
+
+  <!--************ Subscription Starts ************* -->
+  <section class="subscription my-5">
+    <div class="sub-conent container">
+      <div class="row justify-content-between align-items-center text-light">
+        <div class="col-sm-12 col-md-5">
+          <h4 class="text-capitalize mx-0 h3">
+            Be Anothr Lucky Winner for the month!
+          </h4>
+          <p class="text-light fw-bold">
+            <small
+              >Stand a chance to get 50% off your favorite club Jersey this
+              Month. You only need to enter your email stand teh changee to be
+              the lucky winner fo this month
+            </small>
+          </p>
+
+          <form action="" method="post">
+            {% csrf_token %}
+            <div class="sub-form">
+              <input type="text" name="subscription_mail" class="" />
+              <button type="submit" name="border-0 text-light fw-bold p-4">
+                Signup
+              </button>
+            </div>
+          </form>
+        </div>
+
+        <div class="col-sm-12 col-md-5">
+          <div class="sub-image">
+            <img src="{% static 'images/coupon 1.png' %}" alt="" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!--************ Subscription Ends ************* -->
+
+  <!--************ Footer Starts ************* -->
+  <footer class="my-5 container">
+    <div class="row justify-content-evenly">
+      <!-- logo -->
+      <div class="col-sm-12 col-md-3">
+        <div class="logo-wraper">
+          <img src="{% static 'images/logo.png' %}" alt="JerseyWorld logo" />
+        </div>
+        <p class="text-muted mt-1">
+          We provide you with quality jersey wears that bring out the beauty to
+          honor your club
+        </p>
+      </div>
+
+      <!-- Customer Service  -->
+      <div class="col-sm-6 col-md-3 mt-2">
+        <h3 class="h4">Customer Service</h3>
+        <ul class="list-group m-0">
+          <li class="list-group-item ml-0 border-0 px-0">
+            <a href="" class="text-muted">Shipping</a>
+          </li>
+          <li class="list-group-item ml-0 border-0 px-0">
+            <a href="" class="text-muted">Product Return</a>
+          </li>
+          <li class="list-group-item ml-0 border-0 px-0">
+            <a href="" class="text-muted">Privacy Policy</a>
+          </li>
+          <li class="list-group-item ml-0 border-0 px-0">
+            <a href="" class="text-muted">Terms & Conditions</a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Company  -->
+      <div class="col-sm-6 col-md-3 mt-2">
+        <h3 class="h4">Company</h3>
+        <ul class="list-group m-0">
+          <li class="list-group-item ml-0 border-0 px-0">
+            <a href="" class="text-muted">Shipping</a>
+          </li>
+          <li class="list-group-item ml-0 border-0 px-0">
+            <a href="" class="text-muted">Product Return</a>
+          </li>
+          <li class="list-group-item ml-0 border-0 px-0">
+            <a href="" class="text-muted">Privacy Policy</a>
+          </li>
+          <li class="list-group-item ml-0 border-0 px-0">
+            <a href="" class="text-muted">Terms & Conditions</a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Need Help  -->
+      <div class="col-sm-6 col-md-3 mt-2">
+        <h3 class="h4">Need Help?</h3>
+        <ul class="list-group m-0">
+          <li class="list-group-item ml-0 border-0 px-0">
+            <div class="d-flex align-items-center">
+              <img
+                src="{% static 'icons/ic_baseline-support-agent.svg' %}"
+                alt=""
+              />
+              <span class="text-muted  fw-bold">(+2348011224567)</span>
+            </div>
+          </li>
+          <li class="list-group-item ml-0 border-0 px-0">
+            <div class="d-flex justify-content-between align-items-center">
+                <small>Monday - Saturday <br />
+                  09:00am - 04:00pm</small>
+              <div class="wh-container shadow">
+                <div class="whatsapp-icon">
+                  <img src="{% static 'icons/logos_whatsapp.svg' %}" alt="">
+                </div>
+                <span>Contact Us</span>
+              </div>
+            </div>
+          </li>
+          <li class="list-group-item ml-0 border-0 px-0">
+            <span lass="text-muted"
+              >Orders:
+              <span class="text-decoration-underline"
+                >orders@jerseyworld.co</span
+              ></span
+            >
+          </li>
+          <li class="list-group-item ml-0 border-0 px-0">
+            <span lass="text-muted"
+              >Returns:
+              <span class="text-decoration-underline"
+                >returns@jerseyworld.co</span
+              ></span
+            >
+          </li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <!--************ Footer Ends ************* -->
+
+  <!-- footer badge section -->
+  <div class="text-center text-uppercase footer-bottom">
+    <p>
+      copyright (C)
+      <script>
+        document.write(new Date().getFullYear());
+      </script>
+      Jersey World. all right reserved
+    </p>
+  </div>
 </main>
 {% endblock content %}
-
-
 
 <!--************ Header Starts ************* -->
 <!--************ Header Ends ************* -->

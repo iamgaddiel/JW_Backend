@@ -3,11 +3,15 @@
 
 * {
     --red: #F31414;
+    --red2: #E91F2C;
     --red-o-1: #FDE9EA;
     --blue: #041E48;
     --green: #041E48;
     --light: #ffffff;
     --green: #4CB951;
+    --green2:  #15A71B;
+    --grey: #b9b9b9;
+    --transparent: rgba(0, 0, 0, 0.639);
 }
 
 body {
@@ -15,10 +19,26 @@ body {
     margin: 0;
     box-sizing: border-box;
     font-family: 'Roboto', 'Montserrat', sans-serif !important;
+    scroll-behavior: smooth;
 }
 
-a{
+a {
     text-decoration: none !important;
+}
+
+a.btn-outline-red,
+.btn-outline-red {
+    background-color: var(--light);
+    padding: 5px;
+    border: 1px solid var(--red);
+    color: var(--red);
+}
+
+a.c-badge,
+.c-badge {
+    background-color: var(--red-o-1);
+    color: var(--red);
+    border-radius: 20px;
 }
 
 
@@ -88,12 +108,13 @@ nav {
     width: 100%;
     height: auto;
 }
-.nav-flag{
+
+.nav-flag {
     width: 25px;
     display: inline-block;
 }
 
-.nav-flag img{
+.nav-flag img {
     width: 100%;
     height: auto;
 }
@@ -105,25 +126,233 @@ nav {
 /* ------------------------- [ Banner ] --------------- */
 /* -------------------------------------------------------- */
 
-header{
+header {
     background-color: var(--red);
-    height: 90vh;
+    height: 80vh;
     color: var(--light);
     margin-top: 90px;
     overflow-x: hidden !important;
 }
 
-header h1{
+header h1 {
     font-size: 4em;
 }
 
-header p{
+header p {
     font-size: large;
 }
 
-.banner-action-button{
+.banner-action-button {
     border: none;
     padding: 20px;
     width: 190px;
     background-color: var(--light);
 }
+
+
+
+
+
+/* -------------------------------------------------------- */
+/* ------------------------- [ New Arrivals ] ------------- */
+/* -------------------------------------------------------- */
+
+.special-offer {
+    border-radius: 10px;
+    border: 1px solid var(--red);
+}
+
+.special-offer-btn {
+    border-radius: 0 0 10px 0;
+    background-color: var(--red-o-1);
+    color: var(--red);
+    padding: 10px;
+}
+
+
+/* -------------------------------------------------------- */
+/* ------------------------- [ Category ] ------------- */
+/* -------------------------------------------------------- */
+.cg-btn {
+    background: var(--light);
+    color: var(--red);
+    border-radius: 10px;
+    padding: 1px 10px;
+    font-size: 15px;
+}
+
+.category-card {
+    overflow: hidden;
+    border-radius: 10px;
+    position: relative;
+    text-transform: capitalize;
+}
+
+.category-card img {
+    width: 100%;
+    height: auto;
+}
+
+.cg-card-content {
+    background-color: var(--transparent);
+    position: absolute;
+    z-index: 3;
+    bottom: 0;
+    width: 100%;
+    color: var(--light);
+    padding: 0 20px;
+    height: 60px;
+}
+
+/* -------------------------------------------------------- */
+/* ------------------------- [ Trending ] ------------- */
+/* -------------------------------------------------------- */
+
+.trend-card {
+    width: 25%;
+    border-radius: 10px;
+}
+
+@media (max-widtH: 768px) {
+
+    .trend-card {
+        width: 100%;
+        border-radius: 10px;
+    }
+}
+
+/* carousel button */
+/* .slick-dots li button::before{
+    color: var(--grey) !important;
+    border-radius: 50% !important;
+    width: 35px !important;
+    height: 35px !important;
+    padding: 30px !important;
+} */
+
+.slick-dots li.slick-active button::before {
+    color: var(--red) !important;
+}
+
+/* -------------------------------------------------------- */
+/* ------------------------- [ Ads ] ------------- */
+/* -------------------------------------------------------- */
+.ad-card {
+    width: 100%;
+}
+
+.ad-card img {
+    width: 100%;
+    height: auto;
+}
+a.follow-btn{
+    background-color: var(--red);
+    color: var(--light);
+    padding: 20px 50px;
+    border-radius: 8px;
+    transition: .5s;
+    border: 1px solid var(--red);
+    text-align: center;
+    text-transform: capitalize;
+    margin-top: 40px;
+}
+a.follow-btn:hover{
+    color: var(--red);
+    background-color: transparent;
+}
+
+/* -------------------------------------------------------- */
+/* ------------------------- [ Subscription ] ------------- */
+/* -------------------------------------------------------- */
+.subscription{
+    background-color: var(--blue);
+}
+.sub-image{
+    width: 100%;
+}
+.sub-image img{
+    width: 100%;
+    height: auto;
+}
+.subscription p{
+    text-align: justify;
+}
+.sub-form{
+    display: flex;
+    padding: 0;
+}
+.sub-form input{
+    flex-grow: 1;
+    border: none;
+    background-color: var(--light);
+    padding: 10px 5px;
+    border-radius: 5px 0 0 5px;
+}
+.sub-form input:focus{
+    outline: none;
+}
+.sub-form button{
+    background-color: var(--red2);
+    color: var(--light);
+    width: 9vw;
+    border-radius: 0 5px 5px 0;
+    padding: 12px;
+    font-size: small;
+}
+
+@media (max-widtH: 768px) {
+
+    .sub-form button{
+        width: 24vw;
+    }
+}
+
+
+/* -------------------------------------------------------- */
+/* ------------------------- [ Footer ] ------------------- */
+/* -------------------------------------------------------- */
+footer{
+    background-color: var(--light);
+}
+.logo-wraper{
+    width: 200px;
+    /* height: 200px; */
+    display: flex;
+    align-items: center;
+}
+.logo-wraper img{
+    width: 100%;
+    height: auto;
+}
+footer h3{
+    color: var(--blue);
+}
+.wh-container{
+    background-color: var(--green2);
+    color: var(--light);
+    border-radius: 15px;
+    width: 50%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    text-transform: capitalize;
+    padding: 10px;
+    font-weight: bold;
+}
+.whatsapp-icon{
+    width: 30px;
+    height: 30px;
+}
+.whatsapp-icon img{
+    width: 100%;
+    height: auto
+}
+.footer-bottom{
+    background-color: var(--red2);
+    padding: 15px;
+    color: var(--light);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
