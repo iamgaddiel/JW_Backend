@@ -16,6 +16,8 @@ import json
 
 from datetime import timedelta
 
+from django.db.utils import OperationalError
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -111,17 +113,35 @@ WSGI_APPLICATION = 'JW_Backend.wsgi.application'
 #     }
 # }
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': env.get('DB_NAME'),
-        'USER': env.get('DB_USER'),
-        'PASSWORD': env.get('DB_PASSWORD'),
-        'HOST': env.get('DB_HOST'),
-        'PORT': env.get('DB_PORT'),
-    }
-}
+try:
+    DB_NAME  =  env.get('DB_NAME')
+    DB_USER  =  env.get('DB_USER')
+    DB_PASSWORD  =  env.get('DB_PASSWORD')
+    DB_HOST  =  env.get('DB_HOST')
+    DB_PORT  =  env.get('DB_PORT')
 
+    if (
+        DB_NAME or 
+        DB_USER or 
+        DB_PASSWORD or 
+        DB_HOST or 
+        DB_PORT
+    ) is None:
+        print('Database Credentials missing')
+    
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.mysql',
+            'NAME': DB_NAME,
+            'USER': DB_USER,
+            'PASSWORD': DB_PASSWORD,
+            'HOST': DB_HOST,
+            'PORT': DB_PORT,
+        }
+    }
+
+except OperationalError:
+    print('your Database server down')
 
 # Password validation
 # https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators
@@ -241,4 +261,3 @@ REST_AUTH_SERIALIZERS = {
 REST_AUTH_REGISTER_SERIALIZERS = {
     'REGISTER_SERIALIZER': 'api.serializers.UserRegisterSerializer'
 }
-

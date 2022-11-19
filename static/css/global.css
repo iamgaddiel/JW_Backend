@@ -6,13 +6,39 @@
     --red2: #E91F2C;
     --red-o-1: #FDE9EA;
     --blue: #041E48;
+    --blue2: #F3F4F6;
     --green: #041E48;
     --light: #ffffff;
     --green: #4CB951;
-    --green2:  #15A71B;
+    --green2: #15A71B;
     --grey: #b9b9b9;
+    --grey2: #E5E7EB;
     --transparent: rgba(0, 0, 0, 0.639);
 }
+
+/* Text Color */
+.red{color: var(--red) !important};
+.red2{color: var(--red2)};
+.red-o-1{color: var(--red-o-1) !important};
+.blue{color: var(--blue) !important};
+.blue2{color: var(--blue2) !important};
+.green{color: var(--green) !important};
+.green2{color: var(--green2) !important};
+.grey{color: var(--grey) !important};
+.grey2{color: var(--grey2) !important};
+.transparent{color: var(--transparent) !important};
+
+/* Background Color */
+.bg-red{background-color: var(--red) !important};
+.bg-red2{background-color: var(--red2) !important};
+.bg-red-o-1{background-color: var(--red-o-1) !important};
+.bg-blue{background-color: var(--blue)};
+.bg-blue2{background-color: var(--blue2) !important};
+.bg-green{background-color: var(--green) !important};
+.bg-green2{background-color: var(--green2) !important};
+.bg-grey{background-color: var(--grey) !important};
+.bg-grey2{background-color: var(--grey2) !important};
+.bg-transparent{color: var(--transparent) !important};
 
 body {
     padding: 0;
@@ -24,6 +50,10 @@ body {
 
 a {
     text-decoration: none !important;
+}
+
+.title {
+    color: var(--blue) !important;
 }
 
 a.btn-outline-red,
@@ -42,15 +72,20 @@ a.c-badge,
 }
 
 
+/* .title */
+
 /* -------------------------------------------------------- */
 /* ------------------------- [ Navigation ] --------------- */
 /* -------------------------------------------------------- */
 nav {
+    padding: 0 30px;
     background-color: var(--light);
+}
+
+.nav-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 30px;
 }
 
 .nav-logo {
@@ -151,6 +186,14 @@ header p {
 
 
 
+/* -------------------------------------------------------- */
+/* ------------------------- [ Main ] ------------- */
+/* -------------------------------------------------------- */
+
+main {
+    margin-top: 90px;
+}
+
 
 
 /* -------------------------------------------------------- */
@@ -245,7 +288,8 @@ header p {
     width: 100%;
     height: auto;
 }
-a.follow-btn{
+
+a.follow-btn {
     background-color: var(--red);
     color: var(--light);
     padding: 20px 50px;
@@ -256,7 +300,8 @@ a.follow-btn{
     text-transform: capitalize;
     margin-top: 40px;
 }
-a.follow-btn:hover{
+
+a.follow-btn:hover {
     color: var(--red);
     background-color: transparent;
 }
@@ -264,34 +309,41 @@ a.follow-btn:hover{
 /* -------------------------------------------------------- */
 /* ------------------------- [ Subscription ] ------------- */
 /* -------------------------------------------------------- */
-.subscription{
+.subscription {
     background-color: var(--blue);
 }
-.sub-image{
+
+.sub-image {
     width: 100%;
 }
-.sub-image img{
+
+.sub-image img {
     width: 100%;
     height: auto;
 }
-.subscription p{
+
+.subscription p {
     text-align: justify;
 }
-.sub-form{
+
+.sub-form {
     display: flex;
     padding: 0;
 }
-.sub-form input{
+
+.sub-form input {
     flex-grow: 1;
     border: none;
     background-color: var(--light);
     padding: 10px 5px;
     border-radius: 5px 0 0 5px;
 }
-.sub-form input:focus{
+
+.sub-form input:focus {
     outline: none;
 }
-.sub-form button{
+
+.sub-form button {
     background-color: var(--red2);
     color: var(--light);
     width: 9vw;
@@ -302,7 +354,7 @@ a.follow-btn:hover{
 
 @media (max-widtH: 768px) {
 
-    .sub-form button{
+    .sub-form button {
         width: 24vw;
     }
 }
@@ -311,23 +363,27 @@ a.follow-btn:hover{
 /* -------------------------------------------------------- */
 /* ------------------------- [ Footer ] ------------------- */
 /* -------------------------------------------------------- */
-footer{
+footer {
     background-color: var(--light);
 }
-.logo-wraper{
+
+.logo-wraper {
     width: 200px;
     /* height: 200px; */
     display: flex;
     align-items: center;
 }
-.logo-wraper img{
+
+.logo-wraper img {
     width: 100%;
     height: auto;
 }
-footer h3{
+
+footer h3 {
     color: var(--blue);
 }
-.wh-container{
+
+.wh-container {
     background-color: var(--green2);
     color: var(--light);
     border-radius: 15px;
@@ -339,20 +395,311 @@ footer h3{
     padding: 10px;
     font-weight: bold;
 }
-.whatsapp-icon{
+
+.whatsapp-icon {
     width: 30px;
     height: 30px;
 }
-.whatsapp-icon img{
+
+.whatsapp-icon img {
     width: 100%;
     height: auto
 }
-.footer-bottom{
+
+.footer-bottom {
     background-color: var(--red2);
     padding: 15px;
     color: var(--light);
     display: flex;
     justify-content: center;
     align-items: center;
+    overflow: hidden;
 }
 
+
+
+
+/* -------------------------------------------------------- */
+/* ------------------------- [ Store ] ------------------- */
+/* -------------------------------------------------------- */
+.s-card {
+    height: 70vh;
+    overflow: hidden;
+}
+
+.s-card-contents {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: space-between;
+    height: 90%;
+    overflow: hidden;
+}
+
+.s-card-contents .c-img {
+    /* width: 200px; */
+    width: 13rem;
+    margin: auto;
+    overflow: hidden;
+}
+
+.s-card-contents .c-img img {
+    width: 100%;
+    height: auto;
+}
+
+/* @media (max-widtH: 768px) {
+
+    .s-card-contents .c-img{
+        width: 70vw;
+    }
+    
+} */
+
+
+
+
+/* -------------------------------------------------------- */
+/* ------------------------- [ Store Detail ] ------------------- */
+/* -------------------------------------------------------- */
+.preview-content {
+    display: flex;
+}
+
+.preview-min-image {
+    border: 1px solid var(--grey);
+    border-radius: 10px;
+    padding: 5px;
+    transition: .5s;
+    margin-bottom: 10px;
+    width: 90%;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.preview-min-image::hover {
+    border-color: var(--red);
+}
+
+.preview-min-image img {
+    width: 100%;
+    height: auto;
+}
+
+.preview-rhs {
+    position: relative;
+    text-transform: uppercase;
+}
+
+.discount-tag,
+.prev-action-container {
+    z-index: 10;
+    position: absolute;
+}
+
+.discount-tag {
+    background-color: var(--red2);
+    color: var(--light);
+    padding: 15px 10px;
+    border-radius: 10px 0 20px 0;
+}
+
+.prev-action-container {
+    width: 10px;
+    height: 10px;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    right: 20px;
+    margin: 10px 0;
+}
+
+.share-btn {
+    top: 80px;
+}
+
+.preview-rhs {
+    flex: 1;
+    margin: 0 13px;
+    width: 15rem;
+    /* height: fit-content; */
+    height: 34rem;
+    border: 1px solid var(--grey);
+    border-radius: 7px;
+    display: flex;
+    flex-direction: column;
+}
+
+.preview-rhs .card {
+    width: 75% !important;
+    margin: auto;
+    padding: 20px 0
+}
+
+.preview-rhs .card img {
+    width: 100%;
+    height: auto;
+}
+.preview-lhs {
+    display: flex;
+    flex-direction: column;
+}
+
+@media (max-widtH: 768px) {
+
+    .preview-content {
+        flex-direction: column-reverse;
+        margin: 10px 0;
+    }
+
+    .preview-lhs {
+        flex-direction: row;
+        justify-content: space-evenly;
+        margin-top: 20px;
+        width: 85%;
+        margin-left: auto;
+        margin-right: auto;
+
+    }
+
+    .preview-rhs {
+        flex: 1;
+        margin: auto;
+        width: 20rem;
+    }
+
+    .preview-rhs .card {
+        width: 75% !important;
+    }
+
+}
+
+
+/* -------------------------------------------------------- */
+/* ------------------------- [ Size Inputs  ]-------------- */
+/* -------------------------------------------------------- */
+/* Customize the label (the container) */
+.size-container {
+    display: block;
+    position: relative;
+    /* padding-left: 35px; */
+    /* margin-bottom: 12px; */
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    border-radius: 5px;
+    border: 1px solid var(--grey2);
+    transition: .5s;
+}
+
+.size-container:hover {
+    border: 1px solid var(--red2);
+}
+
+/* Hide the browser's default radio button */
+.size-container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+/* Create a custom radio button */
+.size-checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    background-color: #eee;
+    border-radius: 50%;
+}
+
+/* On mouse-over, add a grey background color */
+.size-container:hover input~.checkmark {
+    background-color: #ccc;
+}
+
+/* When the radio button is checked, add a blue background */
+.size-container input:checked~.checkmark {
+    background-color: #2196F3;
+}
+
+/* Create the indicator (the dot/circle - hidden when not checked) */
+.size-checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+/* Show the indicator (dot/circle) when checked */
+.container input:checked~.checkmark:after {
+    display: block;
+}
+
+/* Style the indicator (dot/circle) */
+.size-container .checkmark:after {
+    top: 9px;
+    left: 9px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: white;
+}
+
+
+
+.order-form{
+    background-color: var(--blue2);
+    padding: 10px;
+
+}
+
+#minusBtn, #addBtn{
+    border: none;
+    background-color: var(--grey2);
+    color: var(--blue) !important;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+#quantity-field{
+    width: 3rem;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 0 10px;
+    border: 1px solid var(--grey);
+    color: var(--blue);
+    text-align: center;
+
+}
+#quantity-field:focus{
+    outline: 1px solid var(--red2);
+}
+#add-to-cart-btn,
+#shop-now-btn{
+    background-color: var(--blue);
+    color: var(--light);
+    width: 100%;
+}
+#shop-now-btn{
+    background-color: var(--red2);
+}

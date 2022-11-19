@@ -1,0 +1,425 @@
+{% extends 'core/template.html' %} {% load static %} {% block content %}
+
+<main>
+  <!-- Order  -->
+  <section class="container my-5 py-5">
+    <div class="row justify-content-between">
+      <!--************ [LHS] ************* -->
+      <div class="col-sm-12 col-md-6">
+        <section class="preview-content">
+          <!-- LHS -->
+          <section class="preview-lhs">
+            <div class="preview-min-image">
+              <img src="{{ object.image_two.url }}" alt="" />
+            </div>
+            <div class="preview-min-image">
+              <img src="{{ object.image_three.url }}" alt="" />
+            </div>
+            <div class="preview-min-image">
+              <img src="{{ object.image_four.url }}" alt="" />
+            </div>
+            <div class="preview-min-image">
+              <img src="{{ object.image_four.url }}" alt="" />
+            </div>
+          </section>
+
+          <!-- RHS -->
+          <section class="preview-rhs">
+            <div class="discount-tag">
+              <span class="text-light">-10% OFF</span>
+            </div>
+            <div class="shadow prev-action-container rounded-circle">
+              <div class="fas fa-heart"></div>
+            </div>
+            <div class="shadow share-btn prev-action-container rounded-circle">
+              <div class="fas fa-share text-success"></div>
+            </div>
+            <div class="card border-0">
+              <img
+                src="{{ object.main_image.url }}"
+                alt=""
+                class="card-image"
+              />
+            </div>
+          </section>
+        </section>
+      </div>
+
+      <!--************ [RHS] ************* -->
+      <div class="col-sm-12 col-md-6">
+        <!-- Title -->
+        <section class="detail-title">
+          <h2 class="h3">{{ object.title }}</h2>
+          <p class="text-muted">
+            <span class="stars">
+              <i class="fas fa-star text-warning"></i>
+              <i class="fas fa-star text-warning"></i>
+              <i class="fas fa-star text-warning"></i>
+              <i class="fas fa-star text-warning"></i>
+              <i class="fas fa-star text-warning"></i>
+            </span>
+            <i class="fas fa-circle text-muted"></i>
+            <span class="mx-2 fw-bold">
+              <i class="fas fa-heart text-danger"></i>
+              980 Loved It
+            </span>
+            <i class="fas fa-circle text-muted"></i>
+            <span class="mx-2 fw-bold">
+              <i class="fas fa-check text-success"></i>
+              Authentic
+            </span>
+          </p>
+        </section>
+
+        <!-- Price -->
+        <section class="prince">
+          <span class="text-danger h3">NGN {{ object.price }}</span>
+          <span class="text-muted text-srikethrough ms-4">
+            <strike>NGN {{ object.price }}</strike>
+          </span>
+        </section>
+
+        <p class="d-flex justify-content-between w-50 my-4">
+          <span class="text-pirmary">Select size</span>
+          <span class="blue"
+            >See size guide
+            <i class="far fa-question-circle text-danger"></i>
+          </span>
+        </p>
+
+        <!-- Order Form -->
+        <form action="">
+          {% csrf_token %}
+          <div class="sizes d-flex">
+            <label class="size-container mx-2 p-1">
+              XS
+              <input type="radio" checked="checked" name="size" />
+            </label>
+
+            <label class="size-container mx-2 p-1">
+              S
+              <input type="radio" name="size" />
+            </label>
+
+            <label class="size-container mx-2 p-1">
+              M <input type="radio" name='size' />
+            </label>
+
+            <label class="size-container mx-2 p-1">
+              L <input type="radio" name='size' />
+            </label>
+
+            <label class="size-container mx-2 p-1">
+              XL
+              <input type="radio" name="size" />
+            </label>
+          </div>
+
+          <section class="order-form mt-4 text-muted">
+            <p class="fw-bold">Want this Jersey Customized?</p>
+            <!-- Custom Name -->
+            <div class="row align-items-center">
+              <div class="col-sm-12 col-md-5">
+                <input
+                  type="text"
+                  class="form-control"
+                  name="custom_player"
+                  placeholder="Add player name"
+                />
+              </div>
+              <div class="col-sm-2 col-md-1">
+                <span class="text-center">OR</span>
+              </div>
+              <div class="col">
+                <div class="row">
+                  <div class="col-6">
+                    <input
+                      type="text"
+                      class="form-control"
+                      name="custom_user_name"
+                      placeholder="Add name"
+                    />
+                  </div>
+                  <div class="col-6">
+                    <input
+                      type="text"
+                      class="form-control"
+                      name="custom_user_number"
+                      placeholder="Add number"
+                      inputmode="numeric"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- quantity -->
+            <div class="my-4">
+              <p class="fw-bold blue">Quantity</p>
+              <div class="d-flex quantity-box align-items-center">
+                <button id="minusBtn" type="button">
+                  <i class="fas fa-minus"></i>
+                </button>
+                <input
+                  type="text"
+                  name="quantity"
+                  id="quantity-field"
+                  inputmode="numeric"
+                  placeholder="1"
+                  value="1"
+                />
+                <button id="addBtn" type="button">
+                  <i class="fas fa-plus"></i>
+                </button>
+              </div>
+            </div>
+
+            <div class="row mt-3">
+              <div class="col-6">
+                <button
+                  id="add-to-cart-btn"
+                  type="submit"
+                  class="btn btn-block py-3"
+                >
+                  <!-- <i class="fas fa-cart text-light mx-2"></i> -->
+                  <ion-icon name="cart-outline"></ion-icon>
+                  <!-- <i class="fa fa-cart-shopping mx-2 text-light"></i> -->
+                  Add to cart
+                </button>
+              </div>
+              <div class="col-6">
+                <button id="shop-now-btn" type="submit" class="btn btn-block py-3">
+                  Buy Now
+                </button>
+              </div>
+            </div>
+          </section>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Order Item -->
+  <div class="description container mt-5 py-5">
+    <div class="row justify-content-between">
+      <div class="col-sm-12 col-md-4">
+        <div class="specifications">
+          <div class="small-title">Specifications</div>
+          <table>
+            <tr class="border-bottom">
+              <td colspan="2">
+                <span class="fw-bold">Team Jersey</span>
+              </td>
+              <td colspan="2">
+                <span>{{ object.category.title }}</span>
+              </td>
+            </tr>
+
+            <tr>
+              <td colspan="2">
+                <span class="fw-bold">Sport</span>
+              </td>
+              <td>
+                <span>{{ object.category.title }}</span>
+              </td>
+            </tr>
+
+            <tr>
+              <td colspan="2">
+                <span class="fw-bold">Brand</span>
+              </td>
+              <td>
+                <span>{{ object.category.brand }}</span>
+              </td>
+            </tr>
+
+            <tr>
+              <td colspan="2">
+                <span class="fw-bold">Gender</span>
+              </td>
+              <td>
+                <span>{{ object.category.gender }}</span>
+              </td>
+            </tr>
+
+            <tr>
+              <td colspan="2">
+                <span class="fw-bold">Condition</span>
+              </td>
+              <td>
+                <span>New: A brand-new, unused, unopened, undamaged item</span>
+              </td>
+            </tr>
+          </table>
+        </div>
+      </div>
+      <div class="col-sm-12 col-md-7 mt-5">
+        <div class="border-1 rounded-1">
+          <ul class="nav nav-tabs">
+            <li class="nav-item" role="presentation">
+              <button
+                class="nav-link active"
+                id="home-tab"
+                data-bs-toggle="tab"
+                data-bs-target="#home"
+                type="button"
+                role="tab"
+                aria-controls="home"
+                aria-selected="true"
+              >
+                Description
+              </button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button
+                class="nav-link"
+                id="profile-tab"
+                data-bs-toggle="tab"
+                data-bs-target="#profile"
+                type="button"
+                role="tab"
+                aria-controls="profile"
+                aria-selected="false"
+              >
+                Shipping Info
+              </button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button
+                class="nav-link"
+                id="contact-tab"
+                data-bs-toggle="tab"
+                data-bs-target="#contact"
+                type="button"
+                role="tab"
+                aria-controls="contact"
+                aria-selected="false"
+              >
+                Warranty
+              </button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button
+                class="nav-link"
+                id="contact-tab"
+                data-bs-toggle="tab"
+                data-bs-target="#contact"
+                type="button"
+                role="tab"
+                aria-controls="contact"
+                aria-selected="false"
+              >
+                Return Policy
+              </button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button
+                class="nav-link"
+                id="contact-tab"
+                data-bs-toggle="tab"
+                data-bs-target="#contact"
+                type="button"
+                role="tab"
+                aria-controls="contact"
+                aria-selected="false"
+              >
+                Care For Jersey
+              </button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button
+                class="nav-link"
+                id="contact-tab"
+                data-bs-toggle="tab"
+                data-bs-target="#contact"
+                type="button"
+                role="tab"
+                aria-controls="contact"
+                aria-selected="false"
+              >
+                FAQ
+              </button>
+            </li>
+          </ul>
+          <div class="tab-content text-muted" id="myTabContent">
+            <div
+              class="tab-pane fade show active p-2 text-justify"
+              id="home"
+              role="tabpanel"
+              aria-labelledby="home-tab"
+            >
+              {{ object.description }}
+            </div>
+            <div
+              class="tab-pane fade p-2 text-justify"
+              id="profile"
+              role="tabpanel"
+              aria-labelledby="profile-tab"
+            >
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Earum
+              repellendus modi in nostrum aliquam natus fugiat quo doloremque
+              odio dicta!
+            </div>
+            <div
+              class="tab-pane fade p-2 text-justify"
+              id="contact"
+              role="tabpanel"
+              aria-labelledby="contact-tab"
+            >
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ducimus
+              perferendis aliquid laudantium soluta, incidunt tempore porro
+              necessitatibus sapiente quo saepe.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- You May Also Like -->
+  <div class="d-flex my-5 text-center align-items-center mx-auto w-25">
+    <hr width="100" />
+    <span class="fw-bold mx-3">You Might Also Like</span>
+    <hr width="100" />
+  </div>
+
+  <!-- New Clothes -->
+  <section class="container py-5 my-5">
+    <div class="row justify-content-center align-items-center mt-5">
+      <div class="col-sm-6 col-md-3">
+        <div class="c-card p-2 rounded border">
+          <!-- TODO: toggle icon color -->
+          <!-- TODO: float-start hot-badge -->
+          <a href="" class="float-end">
+            <i class="far fa-heart fa-2x text-dark"></i>
+          </a>
+          <div class="c-img">
+            <img src="{% static 'images/img-4.png' %}" alt="" class="w-100" />
+          </div>
+          <div class="c-card-text mt-4">
+            <p class="text-wrap">
+              Lorem ipsum dolor sit amet consectetur, elit
+            </p>
+            <!-- TODO: if price slash show previous price commented -->
+            <span class="fw-bold">NGN 3,000 </span>
+            <span class="fw-light text-muted text-decoration-line-through"
+              >NGN 3,000</span
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!--************ Subscription Starts ************* -->
+  {% include 'core/inc/subscription.html' %}
+  <!--************ Subscription Ends ************* -->
+
+  <!--************ Footer Starts ************* -->
+  {% include 'core/inc/footer.html' %}
+  <!--************ Footer Ends ************* -->
+</main>
+{% endblock content %}
+
+<!--************ Header Starts ************* -->
+<!--************ Header Ends ************* -->

@@ -1,0 +1,35 @@
+{% load static %}
+<section class="subscription my-5">
+    <div class="sub-conent container">
+      <div class="row justify-content-between align-items-center text-light">
+        <div class="col-sm-12 col-md-5">
+          <h4 class="text-capitalize mx-0 h3">
+            Be Anothr Lucky Winner for the month!
+          </h4>
+          <p class="text-light fw-bold">
+            <small
+              >Stand a chance to get 50% off your favorite club Jersey this
+              Month. You only need to enter your email stand teh changee to be
+              the lucky winner fo this month
+            </small>
+          </p>
+
+          <form action="" method="post">
+            {% csrf_token %}
+            <div class="sub-form">
+              <input type="text" name="subscription_mail" class="" />
+              <button type="submit" name="border-0 text-light fw-bold p-4">
+                Signup
+              </button>
+            </div>
+          </form>
+        </div>
+
+        <div class="col-sm-12 col-md-5">
+          <div class="sub-image">
+            <img src="{% static 'images/coupon 1.png' %}" alt="" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>

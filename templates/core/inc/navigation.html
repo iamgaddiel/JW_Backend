@@ -1,45 +1,49 @@
 {% load static %}
-<nav class="fixed-top container-fluid">
-  <section class="lang-section">
-    <span>
-      Shipping to
-      <div class="nav-flag"> 
-        <img src="{% static 'images/flag.png' %}" alt="">
-      </div> | English - NGN
-      <i class="fa fa-solid_angle-down"></i>
-    </span>
-  </section>
-
-  <section class="nav-logo">
-    <img src="{% static 'images/logo.png' %}" alt="jersey world logo" />
-  </section>
-
-  <section class="nav-items">
-    <!-- search -->
-    <div class="nav-item">
-      <div class="fa fa-search fa-2x"></div>
-    </div>
-
-    <!-- Favorite -->
-    <div class="nav-item">
-      <i class="far fa-heart fa-2x"></i>
-      <span class="nav-badge">1</span>
-      <span class="nav-item-text">saved</span>
-    </div>
-
-    <!-- Cart -->
-    <div class="nav-item">
-      <i class="fa fa-shopping-cart fa-2x"></i>
-      <span class="nav-badge">1</span>
-      <span class="nav-item-text">cart</span>
-    </div>
-
-    <!-- User -->
-    <div class="nav-item">
-      <div class="nav-item-img-wrapper">
-        <img src="{% static 'images/user.png' %}" alt="" />
+<nav class="fixed-top w-100">
+  <div class="nav-container container">
+    <section class="lang-section">
+      <span>
+        Shipping to
+        <div class="nav-flag"> 
+          <img src="{% static 'images/flag.png' %}" alt="">
+        </div> | English - NGN
+        <i class="fa fa-solid_angle-down"></i>
+      </span>
+    </section>
+  
+    <a href="{% url 'core:index' %}">
+      <section class="nav-logo">
+        <img src="{% static 'images/logo.png' %}" alt="jersey world logo" />
+      </section>
+    </a>
+  
+    <section class="nav-items">
+      <!-- search -->
+      <div class="nav-item">
+        <div class="fa fa-search fa-2x"></div>
       </div>
-      <span class="nav-item-text">login</span>
-    </div>
-  </section>
+  
+      <!-- Favorite -->
+      <div class="nav-item">
+        <i class="far fa-heart fa-2x"></i>
+        <span class="nav-badge">1</span>
+        <span class="nav-item-text">saved</span>
+      </div>
+  
+      <!-- Cart -->
+      <div class="nav-item">
+        <i class="fa fa-shopping-cart fa-2x"></i>
+        <span class="nav-badge">1</span>
+        <span class="nav-item-text">cart</span>
+      </div>
+  
+      <!-- User -->
+      <div class="nav-item">
+        <div class="nav-item-img-wrapper">
+          <img src="{% static 'images/user.png' %}" alt="" />
+        </div>
+        <span class="nav-item-text">login</span>
+      </div>
+    </section>
+  </div>
 </nav>

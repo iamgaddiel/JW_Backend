@@ -1,6 +1,6 @@
 {% extends 'core/template.html' %} {% load static %} {% block content %}
 <!--************ Header Starts ************* -->
-<header class="">
+<header>
   <section class="container">
     <div class="row justify-content-between align-items-center">
       <div class="col-sm-12 col-md-7">
@@ -134,7 +134,7 @@
             class="cg-card-content d-flex justify-content-between align-items-center text-capitalize"
           >
             <p class="card-title">football jersey</p>
-            <a href="" class="cg-btn fw-light">Shop Now</a>
+            <a href="{% url 'core:store' 'football' %}" class="cg-btn fw-light">Shop Now</a>
           </div>
         </div>
       </div>
@@ -145,7 +145,7 @@
             class="cg-card-content d-flex justify-content-between align-items-center text-capitalize"
           >
             <p class="card-title">Basketball jersey</p>
-            <a href="" class="cg-btn fw-light">Shop Now</a>
+            <a href="{% url 'core:store' 'basketball'  %}" class="cg-btn fw-light">Shop Now</a>
           </div>
         </div>
       </div>
@@ -156,7 +156,7 @@
             class="cg-card-content d-flex justify-content-between align-items-center text-capitalize"
           >
             <p class="card-title">baseball jersey</p>
-            <a href="" class="cg-btn fw-light">Shop Now</a>
+            <a href="{% url 'core:store' 'baseball' %}" class="cg-btn fw-light">Shop Now</a>
           </div>
         </div>
       </div>
@@ -189,7 +189,7 @@
             class="cg-card-content d-flex justify-content-between align-items-center text-capitalize"
           >
             <p class="card-title">national team jersey</p>
-            <a href="" class="cg-btn fw-light">Shop Now</a>
+            <a href="{% url 'core:store' 'national' %}" class="cg-btn fw-light">Shop Now</a>
           </div>
         </div>
       </div>
@@ -230,7 +230,7 @@
 
     <!--************ VIEW MOrE  ************* -->
     <div class="mt-5 text-center">
-      <a href="" class="btn btn-outline-danger px-5 py-2 shadow">
+      <a href="{% url 'core:store' 'football' %}" class="btn btn-outline-danger px-5 py-2 shadow">
         View More
         <i class="fa fa-angle-right"></i>
       </a>
@@ -454,152 +454,13 @@
   <!--************ Looks Ends ************* -->
 
   <!--************ Subscription Starts ************* -->
-  <section class="subscription my-5">
-    <div class="sub-conent container">
-      <div class="row justify-content-between align-items-center text-light">
-        <div class="col-sm-12 col-md-5">
-          <h4 class="text-capitalize mx-0 h3">
-            Be Anothr Lucky Winner for the month!
-          </h4>
-          <p class="text-light fw-bold">
-            <small
-              >Stand a chance to get 50% off your favorite club Jersey this
-              Month. You only need to enter your email stand teh changee to be
-              the lucky winner fo this month
-            </small>
-          </p>
-
-          <form action="" method="post">
-            {% csrf_token %}
-            <div class="sub-form">
-              <input type="text" name="subscription_mail" class="" />
-              <button type="submit" name="border-0 text-light fw-bold p-4">
-                Signup
-              </button>
-            </div>
-          </form>
-        </div>
-
-        <div class="col-sm-12 col-md-5">
-          <div class="sub-image">
-            <img src="{% static 'images/coupon 1.png' %}" alt="" />
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+  {% include 'core/inc/subscription.html' %}
   <!--************ Subscription Ends ************* -->
 
   <!--************ Footer Starts ************* -->
-  <footer class="my-5 container">
-    <div class="row justify-content-evenly">
-      <!-- logo -->
-      <div class="col-sm-12 col-md-3">
-        <div class="logo-wraper">
-          <img src="{% static 'images/logo.png' %}" alt="JerseyWorld logo" />
-        </div>
-        <p class="text-muted mt-1">
-          We provide you with quality jersey wears that bring out the beauty to
-          honor your club
-        </p>
-      </div>
-
-      <!-- Customer Service  -->
-      <div class="col-sm-6 col-md-3 mt-2">
-        <h3 class="h4">Customer Service</h3>
-        <ul class="list-group m-0">
-          <li class="list-group-item ml-0 border-0 px-0">
-            <a href="" class="text-muted">Shipping</a>
-          </li>
-          <li class="list-group-item ml-0 border-0 px-0">
-            <a href="" class="text-muted">Product Return</a>
-          </li>
-          <li class="list-group-item ml-0 border-0 px-0">
-            <a href="" class="text-muted">Privacy Policy</a>
-          </li>
-          <li class="list-group-item ml-0 border-0 px-0">
-            <a href="" class="text-muted">Terms & Conditions</a>
-          </li>
-        </ul>
-      </div>
-
-      <!-- Company  -->
-      <div class="col-sm-6 col-md-3 mt-2">
-        <h3 class="h4">Company</h3>
-        <ul class="list-group m-0">
-          <li class="list-group-item ml-0 border-0 px-0">
-            <a href="" class="text-muted">Shipping</a>
-          </li>
-          <li class="list-group-item ml-0 border-0 px-0">
-            <a href="" class="text-muted">Product Return</a>
-          </li>
-          <li class="list-group-item ml-0 border-0 px-0">
-            <a href="" class="text-muted">Privacy Policy</a>
-          </li>
-          <li class="list-group-item ml-0 border-0 px-0">
-            <a href="" class="text-muted">Terms & Conditions</a>
-          </li>
-        </ul>
-      </div>
-
-      <!-- Need Help  -->
-      <div class="col-sm-6 col-md-3 mt-2">
-        <h3 class="h4">Need Help?</h3>
-        <ul class="list-group m-0">
-          <li class="list-group-item ml-0 border-0 px-0">
-            <div class="d-flex align-items-center">
-              <img
-                src="{% static 'icons/ic_baseline-support-agent.svg' %}"
-                alt=""
-              />
-              <span class="text-muted  fw-bold">(+2348011224567)</span>
-            </div>
-          </li>
-          <li class="list-group-item ml-0 border-0 px-0">
-            <div class="d-flex justify-content-between align-items-center">
-                <small>Monday - Saturday <br />
-                  09:00am - 04:00pm</small>
-              <div class="wh-container shadow">
-                <div class="whatsapp-icon">
-                  <img src="{% static 'icons/logos_whatsapp.svg' %}" alt="">
-                </div>
-                <span>Contact Us</span>
-              </div>
-            </div>
-          </li>
-          <li class="list-group-item ml-0 border-0 px-0">
-            <span lass="text-muted"
-              >Orders:
-              <span class="text-decoration-underline"
-                >orders@jerseyworld.co</span
-              ></span
-            >
-          </li>
-          <li class="list-group-item ml-0 border-0 px-0">
-            <span lass="text-muted"
-              >Returns:
-              <span class="text-decoration-underline"
-                >returns@jerseyworld.co</span
-              ></span
-            >
-          </li>
-        </ul>
-      </div>
-    </div>
-  </footer>
-
+  {% include 'core/inc/footer.html' %}
   <!--************ Footer Ends ************* -->
 
-  <!-- footer badge section -->
-  <div class="text-center text-uppercase footer-bottom">
-    <p>
-      copyright (C)
-      <script>
-        document.write(new Date().getFullYear());
-      </script>
-      Jersey World. all right reserved
-    </p>
-  </div>
 </main>
 {% endblock content %}
 

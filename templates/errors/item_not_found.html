@@ -1,0 +1,20 @@
+{% load static %}
+
+<section class="not-found text-center mb-3 pb-5 container">
+  <div class="error-image-container">
+    <img
+      src="{% static 'icons/no_match_illustration_v3_darkmode.svg' %}"
+      alt="item not found"
+    />
+  </div>
+  <p class="text-muted mb-1 title display-2">Oh Sorry! no Item found</p>
+  <br>
+  
+  <a
+    href="{% url 'core:index' %}"
+    class="btn btn-outline-danger px-5 py-2 shadow"
+  >
+    Take Me Home
+    <i class="fa fa-home"></i>
+  </a>
+</section>
